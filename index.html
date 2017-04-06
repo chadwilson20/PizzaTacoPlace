@@ -7,20 +7,29 @@
     <title>Pizza Order Form</title>
     <script type="text/javascript" src="pizza.js"></script>
   </head>
-  <body lang="en-US">
+  <body lang="en-US" onload="retrieveSavedOrder();">
     <div class="container-fluid">
       <form class="form-horizontal">
         <div class="row">
           <label for="pizzaText" class="col-sm-2 control-label">Whaddaya want on your pizza?</label>
           <div class="col-sm-8">
             <div class="checkbox">
-              <label><input type="checkbox">Veggies</label>
+              <label>
+                <input type="checkbox" id="checkVeggies" class="topping">
+                  Veggies
+              </label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox">Pepperoni</label>
+              <label>
+                <input type="checkbox" id="checkPepperoni" class="topping">
+                  Pepperoni
+              </label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox">Sausage</label>
+              <label>
+                <input type="checkbox" id="checkSausage" class="topping">
+                  Sausage
+              </label>
             </div>
           </div>
         </div>
@@ -33,8 +42,11 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2 col-sm-2">
-            <button type="button" class="btn btn-primary">
+            <button id="orderButton" type="button" class="btn btn-primary" onclick="getCustomerName()">
               Order
+            </button>
+            <button id="saveOrder" type="button" class="btn btn-primary" onclick="retrieveSavedOrder()">
+              Previous Order
             </button>
           </div>
         </div>
